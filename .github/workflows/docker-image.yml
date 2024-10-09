@@ -1,0 +1,18 @@
+name: Build API Image
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: scheat
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file DockerLoadBalancing.UI.API/Dockerfile --tag my-image-name:$(date +%s)
