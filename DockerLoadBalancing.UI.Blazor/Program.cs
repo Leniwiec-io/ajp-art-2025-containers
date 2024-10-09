@@ -18,6 +18,13 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddScoped<HttpClient>();
 
+builder.Services.AddAntiforgery(options =>
+{     // Set Cookie properties using CookieBuilder properties†.
+
+    options.Cookie.Expiration = TimeSpan.Zero;
+
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,12 +35,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 
-app.UseStaticFiles();
 app.UseAntiforgery();
+app.UseStaticFiles();
 
 app.MapRazorComponents<App>()
+    .DisableAntiforgery()
     .AddInteractiveServerRenderMode();
 
 app.Run();
