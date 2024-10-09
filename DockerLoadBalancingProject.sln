@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerLoadBalancing.Domain", "DockerLoadBalancing.Domain\DockerLoadBalancing.Domain.csproj", "{0B2E01D5-388D-4AD1-A194-A58C7B995991}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerLoadBalancing.Application", "DockerLoadBalancing.Application\DockerLoadBalancing.Application.csproj", "{826450C2-3267-4E15-ABD8-116D82A1007D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerLoadBalancing.Infrastructure", "DockerLoadBalancing.Infrastructure\DockerLoadBalancing.Infrastructure.csproj", "{CECA580D-803C-48E3-A9FF-D6CE1D946C69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerLoadBalancing.UI.API", "DockerLoadBalancing.UI.API\DockerLoadBalancing.UI.API.csproj", "{5E57276E-182D-4639-AAC0-30603DE7458F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerLoadBalancing.UI.Blazor", "DockerLoadBalancing.UI.Blazor\DockerLoadBalancing.UI.Blazor.csproj", "{99FEEBD0-5C96-4084-AD90-028F53EFABE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{919C5B16-0177-4E17-84CA-6F00C25AF7C4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B2E01D5-388D-4AD1-A194-A58C7B995991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2E01D5-388D-4AD1-A194-A58C7B995991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2E01D5-388D-4AD1-A194-A58C7B995991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2E01D5-388D-4AD1-A194-A58C7B995991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826450C2-3267-4E15-ABD8-116D82A1007D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826450C2-3267-4E15-ABD8-116D82A1007D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826450C2-3267-4E15-ABD8-116D82A1007D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826450C2-3267-4E15-ABD8-116D82A1007D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECA580D-803C-48E3-A9FF-D6CE1D946C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECA580D-803C-48E3-A9FF-D6CE1D946C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECA580D-803C-48E3-A9FF-D6CE1D946C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECA580D-803C-48E3-A9FF-D6CE1D946C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E57276E-182D-4639-AAC0-30603DE7458F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E57276E-182D-4639-AAC0-30603DE7458F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E57276E-182D-4639-AAC0-30603DE7458F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E57276E-182D-4639-AAC0-30603DE7458F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99FEEBD0-5C96-4084-AD90-028F53EFABE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99FEEBD0-5C96-4084-AD90-028F53EFABE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99FEEBD0-5C96-4084-AD90-028F53EFABE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99FEEBD0-5C96-4084-AD90-028F53EFABE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0430781C-946F-43F0-A7B1-1CFB8C2561E1}
+	EndGlobalSection
+EndGlobal
