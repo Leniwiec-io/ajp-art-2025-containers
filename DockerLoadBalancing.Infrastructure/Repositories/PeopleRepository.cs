@@ -15,6 +15,7 @@ namespace DockerLoadBalancing.Infrastructure.Repositories
         public PeopleRepository(PeopleContext context)
         {
             _context = context;
+            _context.Database.EnsureCreated();
         }
         public async Task<IEnumerable<Person>> GetPeopleAsync()
         {

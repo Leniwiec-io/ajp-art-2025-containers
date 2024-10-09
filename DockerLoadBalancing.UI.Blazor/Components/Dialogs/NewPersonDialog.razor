@@ -1,0 +1,37 @@
+﻿@using DockerLoadBalancing.Domain
+@inject ISnackbar snack
+
+<MudDialog>
+    <DialogContent>
+        <div class="d-flex flex-column justify-center">
+            <MudTextField T="string" @bind-Value="person.Name" Label="Name" Typo="Typo.input"></MudTextField>
+            <MudTextField T="string" @bind-Value="person.SecondName" Label="Second name" Typo="Typo.input"></MudTextField>
+            <MudTextField T="string" @bind-Value="person.City" Label="City" Typo="Typo.input"></MudTextField>
+            <MudTextField T="string" @bind-Value="person.Address" Label="Address" Typo="Typo.input"></MudTextField>
+        </div>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Submit</MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+@code {
+    [CascadingParameter]
+    private MudDialogInstance dialog { get; set; }
+    private Person person = new();
+    private void Submit()
+    {
+        if (
+            person.Name == string.Empty ||
+            person.SecondName == string.Empty ||
+            person.City == string.Empty ||
+            person.Address == string.Empty
+        )
+            snack.Add("Fill all fields with proper info.", Severity.Error);
+        else
+            dialog.Close(DialogResult.Ok(person));
+    }
+    private void Cancel() => dialog.Cancel();
+}
