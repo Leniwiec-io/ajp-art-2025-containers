@@ -1,0 +1,53 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: database
+    hostname: db
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD="Q@wertyuiop"
+      - MSSQL_PID="Developer"
+    networks:
+      - simp_cunt_db
+    volumes:
+      - ./db:/var/opt/mssql
+
+  api:
+    image: simp_cunt/api
+    build:
+      context: .
+      dockerfile: DockerLoadBalancing.UI.API/Dockerfile
+    container_name: api
+    hostname: api
+    restart: unless-stopped
+    networks:
+      - simp_cunt_db
+      - simp_cunt_web
+    environment:
+      - uwu=true
+    depends_on:
+      - db
+
+  web:
+    image: simp_cunt/web
+    build:
+      context: .
+      dockerfile: DockerLoadBalancing.UI.Blazor/Dockerfile
+    container_name: web_ui
+    hostname: web_ui
+    restart: unless-stopped
+    environment:
+      - Alsdoakdsdasdaosd=asdadoasjkdoa
+    networks:
+      - simp_cunt_db
+      - simp_cunt_web
+    depends_on:
+      - db
+      - api
+
+networks:
+  simp_cunt_db:
+    name: simp_cunt_db
+  simp_cunt_web:
+    name: simp_cunt_web
