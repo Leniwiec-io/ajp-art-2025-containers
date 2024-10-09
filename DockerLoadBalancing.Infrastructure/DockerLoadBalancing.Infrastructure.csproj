@@ -27,4 +27,8 @@
     <ProjectReference Include="..\DockerLoadBalancing.Application\DockerLoadBalancing.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SQLite\" />
+  </ItemGroup>
+
 </Project>
