@@ -7,7 +7,6 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD="Q@wertyuiop"
-      - MSSQL_PID="Developer"
     networks:
       - simp_cunt_db
     volumes:
@@ -38,13 +37,27 @@ services:
     hostname: web_ui
     restart: unless-stopped
     environment:
-      - Alsdoakdsdasdaosd=asdadoasjkdoa
+      - APILink=http://api:8080/api/People
     networks:
       - simp_cunt_db
       - simp_cunt_web
     depends_on:
       - db
       - api
+
+  nginx_proxy_manager:
+    image: 'docker.io/jc21/nginx-proxy-manager:latest'
+    container_name: nginx_proxy_manager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - simp_cunt_web
 
 networks:
   simp_cunt_db:
