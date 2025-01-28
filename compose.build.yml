@@ -8,12 +8,12 @@ services:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD="Q@wertyuiop"
     networks:
-      - simp_cunt_db
+      - db
     volumes:
       - ./db:/var/opt/mssql
 
   api:
-    image: simp_cunt/api
+    image: my_repo/api
     build:
       context: .
       dockerfile: DockerLoadBalancing.UI.API/Dockerfile
@@ -21,15 +21,15 @@ services:
     hostname: api
     restart: unless-stopped
     networks:
-      - simp_cunt_db
-      - simp_cunt_web
+      - db
+      - web
     environment:
-      - uwu=true
+      - test=true
     depends_on:
       - db
 
   web:
-    image: simp_cunt/web
+    image: my_repo/web
     build:
       context: .
       dockerfile: DockerLoadBalancing.UI.Blazor/Dockerfile
@@ -57,10 +57,10 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     networks:
-      - simp_cunt_web
+      - web
 
 networks:
-  simp_cunt_db:
-    name: simp_cunt_db
-  simp_cunt_web:
-    name: simp_cunt_web
+  db:
+    name: db
+  web:
+    name: web
